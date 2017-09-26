@@ -1,6 +1,6 @@
 <?php
 
-$app->post('/api/GettyImages/deleteAssetToBoard', function ($request, $response) {
+$app->post('/api/GettyImages/deleteAssetFromBoard', function ($request, $response) {
 
     $settings = $this->settings;
     $checkRequest = $this->validation;
