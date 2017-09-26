@@ -3179,7 +3179,7 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Provide access token.",
-                    "required": false
+                    "required": true
                 },
                 {
                     "name": "fields",
@@ -4483,7 +4483,7 @@
             ]
         },
         {
-            "name": "deleteAssetToBoard",
+            "name": "deleteAssetFromBoard",
             "description": "Boards are where you collect, curate, collaborate on and manage photo and video assets in one place. More information on the Boards FAQ. Use this endpoint to remove an asset from a board.",
             "args": [
                 {

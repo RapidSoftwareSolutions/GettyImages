@@ -15,7 +15,7 @@ $app->post('/api/GettyImages/refreshToken', function ($request, $response) {
     $requiredParams = ['apiKey'=>'client_id','apiSecret'=>'client_secret','refreshToken'=>'refresh_token'];
     $optionalParams = [];
     $bodyParams = [
-       'query' => ['client_secret','client_id','refresh_token']
+       'form_params' => ['client_secret','client_id','refresh_token']
     ];
 
     $data = \Models\Params::createParams($requiredParams, $optionalParams, $post_data['args']);
@@ -28,7 +28,7 @@ $app->post('/api/GettyImages/refreshToken', function ($request, $response) {
     
 
     $requestParams = \Models\Params::createRequestBody($data, $bodyParams);
-    $requestParams['headers'] = [];
+    $requestParams['form_params']['grant_type'] = 'refresh_token';
      
 
     try {

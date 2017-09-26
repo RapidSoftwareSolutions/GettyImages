@@ -27,7 +27,7 @@ $routes = [
     'addBoardAssets',
     'deleteBoardAssets',
     'addAssetToBoard',
-    'deleteAssetToBoard',
+    'deleteAssetFromBoard',
     'getBoardComments',
     'createBoardComments',
     'deleteBoardComments',

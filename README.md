@@ -423,7 +423,7 @@ Boards are where you collect, curate, collaborate on and manage photo and video 
 | boardId       | String     | Specify the board to add an asset to.
 | assetId       | String     | Specify the asset to add to the board. If it is already in the board's asset collection, no action is taken. 
 
-## GettyImages.deleteAssetToBoard
+## GettyImages.deleteAssetFromBoard
 Boards are where you collect, curate, collaborate on and manage photo and video assets in one place. More information on the [Boards FAQ](http://www.gettyimages.com/boards/faq). Use this endpoint to remove an asset from a board.
 
 | Field         | Type       | Description

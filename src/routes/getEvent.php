@@ -37,8 +37,12 @@ $app->post('/api/GettyImages/getEvent', function ($request, $response) {
     
 
     $requestParams = \Models\Params::createRequestBody($data, $bodyParams);
-    $requestParams['headers'] = ["Api-Key"=>"{$data['apiKey']}", "Authorization"=>"Bearer {$data['accessToken']}"];
+    $requestParams['headers'] = ["Api-Key"=>"{$data['apiKey']}"];
 
+    if(!empty($data['accessToken']))
+    {
+        $requestParams['headers']['Authorization'] = "Bearer {$data['accessToken']}";
+    }
     if(!empty($data['acceptLanguage']))
     {
         $requestParams['headers']['acceptLanguage'] = $data['acceptLanguage'];

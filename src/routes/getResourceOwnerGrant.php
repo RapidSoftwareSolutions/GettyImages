@@ -15,7 +15,7 @@ $app->post('/api/GettyImages/getResourceOwnerGrant', function ($request, $respon
     $requiredParams = ['apiKey'=>'client_id','apiSecret'=>'client_secret','username'=>'username','password'=>'password'];
     $optionalParams = [];
     $bodyParams = [
-       'query' => ['client_secret','client_id','username','password']
+       'form_params' => ['client_secret','client_id','username','password']
     ];
 
     $data = \Models\Params::createParams($requiredParams, $optionalParams, $post_data['args']);
@@ -28,7 +28,7 @@ $app->post('/api/GettyImages/getResourceOwnerGrant', function ($request, $respon
     
 
     $requestParams = \Models\Params::createRequestBody($data, $bodyParams);
-    $requestParams['headers'] = [];
+    $requestParams['form_params']['grant_type'] = 'password';
      
 
     try {

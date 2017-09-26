@@ -15,7 +15,7 @@ $app->post('/api/GettyImages/getAccessToken', function ($request, $response) {
     $requiredParams = ['apiKey'=>'client_id','apiSecret'=>'client_secret'];
     $optionalParams = [];
     $bodyParams = [
-       'query' => ['client_secret','client_id']
+       'form_params' => ['client_secret','client_id']
     ];
 
     $data = \Models\Params::createParams($requiredParams, $optionalParams, $post_data['args']);
@@ -28,8 +28,7 @@ $app->post('/api/GettyImages/getAccessToken', function ($request, $response) {
     
 
     $requestParams = \Models\Params::createRequestBody($data, $bodyParams);
-    $requestParams['headers'] = [];
-     
+    $requestParams['form_params']['grant_type'] = 'client_credentials';
 
     try {
         $resp = $client->post($query_str, $requestParams);
