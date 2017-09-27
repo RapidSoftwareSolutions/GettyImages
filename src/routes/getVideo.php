@@ -25,7 +25,16 @@ $app->post('/api/GettyImages/getVideo', function ($request, $response) {
     $client = $this->httpClient;
     $query_str = "https://api.gettyimages.com/v3/videos/{$data['id']}";
 
-    
+    $emptyArr = ['ids','fields'];
+
+
+    foreach($emptyArr as $key => $value)
+    {
+        if(!empty($data[$value]))
+        {
+            $data[$value] = \Models\Params::toString($data[$value], ',');
+        }
+    }
 
     $requestParams = \Models\Params::createRequestBody($data, $bodyParams);
     $requestParams['headers'] = ["Api-Key"=>"{$data['apiKey']}"];

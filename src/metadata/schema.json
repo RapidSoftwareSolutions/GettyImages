@@ -1716,7 +1716,6 @@
                         "name": "graphicalStyle",
                         "type": "Select",
                         "options": [
-                            "fine_art",
                             "illustration",
                             "photography"
                         ],
@@ -1842,19 +1841,6 @@
                     "type": "String",
                     "info": "Search images using a search phrase.",
                     "required": false
-                },
-                {
-                    "name": "prestigeContentOnly",
-                    "type": "Select",
-                    "options": [
-                        "true",
-                        "false"
-                    ],
-                    "info": "Restrict search results to prestige images. The default is false.",
-                    "required": false,
-                    "vendorSchema": {
-                        "name": "prestige_content_only"
-                    }
                 },
                 {
                     "name": "productTypes",
@@ -2255,7 +2241,8 @@
                     "options": [
                         "best_match",
                         "most_popular",
-                        "newest"
+                        "newest",
+                        "oldest"
                     ],
                     "info": "Select sort order of results.",
                     "required": false,
@@ -2547,21 +2534,6 @@
                     }
                 },
                 {
-                    "name": "specificPeople",
-                    "type": "List",
-                    "structure": {
-                        "name": "specificPeople",
-                        "type": "String",
-                        "info": "Specific people."
-                    },
-                    "info": "Return only images associated with specific people.",
-                    "required": false,
-                    "vendorSchema": {
-                        "name": "specific_people",
-                        "format": "toString{,}"
-                    }
-                },
-                {
                     "name": "formatAvailable",
                     "type": "Select",
                     "options": [
@@ -2842,25 +2814,6 @@
                     }
                 },
                 {
-                    "name": "licenseModels",
-                    "type": "List",
-                    "structure": {
-                        "name": "licenseModel",
-                        "type": "Select",
-                        "options": [
-                            "royalty_free",
-                            "rights_ready"
-                        ],
-                        "info": "Single license model."
-                    },
-                    "info": "Specifies the image licensing model(s).",
-                    "required": false,
-                    "vendorSchema": {
-                        "name": "license_models",
-                        "format": "toString{,}"
-                    }
-                },
-                {
                     "name": "phrase",
                     "type": "String",
                     "info": "Search images using a search phrase.",
@@ -2938,7 +2891,9 @@
                     "type": "Select",
                     "options": [
                         "best_match",
-                        "newest"
+                        "newest",
+                        "most_popular",
+                        "oldest"
                     ],
                     "info": "Select sort order of results.",
                     "required": false,
@@ -3345,8 +3300,7 @@
                             "summary_set",
                             "thumb",
                             "title",
-                            "uri_oembed",
-                            "istock_licenses"
+                            "uri_oembed"
                         ],
                         "info": "Select field."
                     },
