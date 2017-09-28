@@ -390,28 +390,6 @@ Boards are where you collect, curate, collaborate on and manage photo and video 
 | acceptLanguage| String     | Provide a header to specify the language of result values.
 | boardId       | String     | Specify the board to delete.
 
-## GettyImages.addBoardAssets
-Boards are where you collect, curate, collaborate on and manage photo and video assets in one place. More information on the [Boards FAQ](http://www.gettyimages.com/boards/faq). Use this endpoint to add a set of assets to a board.
-
-| Field         | Type       | Description
-|---------------|------------|----------
-| apiKey        | credentials| Provide your API key.
-| accessToken   | String     | Provide access token.
-| acceptLanguage| String     | Provide a header to specify the language of result values.
-| boardId       | String     | Specify the board to add assets to.
-| assetsIds     | List       | List assets to add to the board.
-
-## GettyImages.deleteBoardAssets
-Boards are where you collect, curate, collaborate on and manage photo and video assets in one place. More information on the [Boards FAQ](http://www.gettyimages.com/boards/faq). Use this endpoint to add a set of assets to a board.
-
-| Field         | Type       | Description
-|---------------|------------|----------
-| apiKey        | credentials| Provide your API key.
-| accessToken   | String     | Provide access token.
-| acceptLanguage| String     | Provide a header to specify the language of result values.
-| boardId       | String     | Specify the board to remove assets from.
-| assetsIds     | List       | List the assets to be removed from the board.
-
 ## GettyImages.addAssetToBoard
 Boards are where you collect, curate, collaborate on and manage photo and video assets in one place. More information on the [Boards FAQ](http://www.gettyimages.com/boards/faq). Use this endpoint to add an asset to a board.
 
@@ -433,38 +411,6 @@ Boards are where you collect, curate, collaborate on and manage photo and video 
 | acceptLanguage| String     | Provide a header to specify the language of result values.
 | boardId       | String     | Specify the board to remove an asset from.
 | assetId       | String     | Specify the asset to add to the board. If it is already in the board's asset collection, no action is taken. 
-
-## GettyImages.getBoardComments
-Boards are where you collect, curate, collaborate on and manage photo and video assets in one place. More information on the [Boards FAQ](http://www.gettyimages.com/boards/faq). Use this endpoint to retrieve all comments for a specific board.
-
-| Field         | Type       | Description
-|---------------|------------|----------
-| apiKey        | credentials| Provide your API key.
-| accessToken   | String     | Provide access token.
-| acceptLanguage| String     | Provide a header to specify the language of result values.
-| boardId       | String     | Specify the board to retrieve comments from.
-
-## GettyImages.createBoardComments
-Boards are where you collect, curate, collaborate on and manage photo and video assets in one place. More information on the [Boards FAQ](http://www.gettyimages.com/boards/faq). Use this endpoint to add a comment to a board.
-
-| Field         | Type       | Description
-|---------------|------------|----------
-| apiKey        | credentials| Provide your API key.
-| accessToken   | String     | Provide access token.
-| acceptLanguage| String     | Provide a header to specify the language of result values.
-| boardId       | String     | Specify the board to add a comment to.
-| commentText   | String     | Comment text.
-
-## GettyImages.deleteBoardComments
-Boards are where you collect, curate, collaborate on and manage photo and video assets in one place. More information on the [Boards FAQ](http://www.gettyimages.com/boards/faq). Use this endpoint to delete a comment from a board.
-
-| Field         | Type       | Description
-|---------------|------------|----------
-| apiKey        | credentials| Provide your API key.
-| accessToken   | String     | Provide access token.
-| acceptLanguage| String     | Provide a header to specify the language of result values.
-| boardId       | String     | Specify the board containing the comment to delete.
-| commentId     | String     | Specify the comment to delete.
 
 ## GettyImages.getCollection
 Use this endpoint to retrieve collections associated with your Getty Images account. To browse available collections see our Image collections page.
@@ -540,46 +486,6 @@ This endpoint returns a list of all images purchased on gettyimages.com by the u
 | page       | Number     | Request results starting at a page number (default is 1, maximum is 50).
 | pageSize   | Number     | Request number of images to return in each page.
 
-## GettyImages.reportUsage
-Use this endpoint to report the usages of a set of assets. The count of assets submitted in a single batch to this endpoint is limited to 1000. Note that all asset Ids specified must be valid or the operation will fail causing no usages to be recorded. In this case, you will need to remove the invalid asset Ids from the query request and re-submit the query.
-
-| Field         | Type       | Description
-|---------------|------------|----------
-| apiKey        | credentials| Provide your API key.
-| accessToken   | String     | Provide access token.
-| acceptLanguage| String     | Provide a header to specify the language of result values.
-| reportId      | String     | Specifies a unique batch transaction id to identify the report.
-| assetUsages  | Array      | Identifies the list of asset id, usage count and date of usage combinations to record.
-
-## GettyImages.assetChanges
-Asset changes.
-
-| Field         | Type       | Description
-|---------------|------------|----------
-| apiKey        | credentials| Provide your API key.
-| accessToken   | String     | Provide access token.
-| acceptLanguage| String     | Provide a header to specify the language of result values.
-| channelId     | Number     | Specifies the id of the channel for the asset data. Valid channel ids can be found in the results of the Get Partner Channel query.
-| batchSize     | Number     | Specifies the number of assets to return. The default is 10; maximum is 500.
-
-## GettyImages.deleteAssetChanges
-Confirm asset changes acknowledges receipt of asset changes.
-
-| Field         | Type       | Description
-|---------------|------------|----------
-| apiKey        | credentials| Provide your API key.
-| accessToken   | String     | Provide access token.
-| acceptLanguage| String     | Provide a header to specify the language of result values.
-| changeSetId   | Number     | Specify the change-set-id associated with a transaction resource whose receipt you want to confirm.
-
-## GettyImages.getPartnerChannels
-Confirm asset changes acknowledges receipt of asset changes.
-
-| Field         | Type       | Description
-|---------------|------------|----------
-| apiKey        | credentials| Provide your API key.
-| accessToken   | String     | Provide access token.
-| acceptLanguage| String     | Provide a header to specify the language of result values.
 
 ## GettyImages.registerAssets
 Registers a list of assets that a customer has stored in their system.
